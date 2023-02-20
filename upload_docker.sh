@@ -5,11 +5,14 @@
 
 # Step 1:
 # Create dockerpath
-# dockerpath=<your docker ID/path>
+dockerpath="dancan/pricepredictionapp"
 
 # Step 2:  
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
+docker login
+docker tag pricepredictionapp $dockerpath:v1
 
 # Step 3:
 # Push image to a docker repository
+docker push $dockerpath:v1
